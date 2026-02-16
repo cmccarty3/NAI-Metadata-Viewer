@@ -7,21 +7,21 @@ A high-performance, privacy-focused web application designed to extract, visuali
 ## 🚀 Key Features
 
 * **Universal Parsing:** Seamlessly reads metadata from all NovelAI model versions.
-    * [cite_start]**Stealth Mode:** Decodes data hidden in the Alpha channel LSB (Least Significant Bit) for V3 and V4 images[cite: 5, 36, 40].
-    * [cite_start]**Standard Mode:** Reads standard PNG `tEXt` chunks used by V4.5 and newer generations[cite: 32].
-* **100% Client-Side Privacy:** All processing is performed locally in your browser using Web Workers. [cite_start]No images are ever uploaded to a remote server[cite: 8, 90].
-* [cite_start]**Local Persistence:** "Favorite" images and their prompt data are stored in your browser's **IndexedDB** (via Dexie.js), persisting across reloads without filling up your RAM[cite: 96, 107].
-* **Vibe Transfer Support:** Automatically detects Vibe Transfer settings, displaying "Reference Strength" and "Info Extracted" sliders. [cite_start]Includes a one-click download for the `.naiv4vibe` file to easily recreate styles[cite: 80, 182].
+    * **Stealth Mode:** Decodes data hidden in the Alpha channel LSB (Least Significant Bit) for V3 and V4 images.
+    * **Standard Mode:** Reads standard PNG `tEXt` chunks used by V4.5 and newer generations.
+* **100% Client-Side Privacy:** All processing is performed locally in your browser using Web Workers. No images are ever uploaded to a remote server.
+* **Local Persistence:** "Favorite" images and their prompt data are stored in your browser's **IndexedDB** (via Dexie.js), persisting across reloads without filling up your RAM.
+* **Vibe Transfer Support:** Automatically detects Vibe Transfer settings, displaying "Reference Strength" and "Info Extracted" sliders. Includes a one-click download for the `.naiv4vibe` file to easily recreate styles.
 * **Character Prompt Visualization:** Parses nested V4 schemas to display character-specific prompts, their screen coordinates, and their unique negative prompts.
-* [cite_start]**High Performance:** Capable of batch-processing 50+ images simultaneously at 60fps by offloading binary parsing to background threads[cite: 94, 218].
+* **High Performance:** Capable of batch-processing 50+ images simultaneously at 60fps by offloading binary parsing to background threads.
 
 ## 🛠️ Technology Stack
 
-* [cite_start]**Frontend Framework:** React.js [cite: 100]
-* [cite_start]**Build Tool:** Vite [cite: 100]
-* [cite_start]**Styling:** Tailwind CSS [cite: 100]
-* [cite_start]**Database:** Dexie.js (IndexedDB wrapper) [cite: 100]
-* [cite_start]**Binary Processing:** Pako (zlib inflation) [cite: 100]
+* **Frontend Framework:** React.js
+* **Build Tool:** Vite 
+* **Styling:** Tailwind CSS 
+* **Database:** Dexie.js (IndexedDB wrapper) 
+* **Binary Processing:** Pako (zlib inflation) 
 * **Icons:** Lucide React
 
 ## 📦 Installation & Setup
@@ -53,11 +53,11 @@ Ensure you have **Node.js** (v16 or higher) installed on your machine.
 ### Importing Images
 * **Drag & Drop:** Simply drag a selection of PNG files directly onto the drop zone.
 * **Manual Upload:** Click the **"Upload Images"** button to open the system file picker.
-* *Note: Only original `.png` files contain the hidden metadata. [cite_start]Images converted to `.jpg` or downloaded from social media (Twitter/Discord) often have this data stripped[cite: 252].*
+* *Note: Only original `.png` files contain the hidden metadata. Images converted to `.jpg` or downloaded from social media (Twitter/Discord) often have this data stripped.*
 
 ### Managing Your Session
 * **Session Tab:** Shows all images currently loaded in memory. These vanish if you refresh the page.
-* **Favorites Tab:** Click the **Save (Floppy Disk)** icon to persist an image. [cite_start]These are saved to the local database and will remain available even after you close the browser[cite: 218].
+* **Favorites Tab:** Click the **Save (Floppy Disk)** icon to persist an image. These are saved to the local database and will remain available even after you close the browser.
 * **Deleting:** Click the **Trash** icon to remove an image from the current view. Deleting from "Favorites" permanently removes it from the local database.
 
 ### Advanced Tools
@@ -67,9 +67,9 @@ Ensure you have **Node.js** (v16 or higher) installed on your machine.
 
 ## 📂 Project Structure
 
-* `src/workers/metadata.worker.js`: The core engine. [cite_start]Handles the heavy lifting of reading binary data, LSB extraction, and zlib decompression[cite: 188].
-* [cite_start]`src/lib/db.js`: Manages the IndexedDB schema and the `normalizeMetadata` function that maps different NAI versions to a unified format[cite: 198, 204].
-* [cite_start]`src/components/MetadataGrid.jsx`: The main UI component for rendering image cards, including the logic for character prompts and Vibe sliders[cite: 221].
+* `src/workers/metadata.worker.js`: The core engine. Handles the heavy lifting of reading binary data, LSB extraction, and zlib decompression.
+* `src/lib/db.js`: Manages the IndexedDB schema and the `normalizeMetadata` function that maps different NAI versions to a unified format.
+* `src/components/MetadataGrid.jsx`: The main UI component for rendering image cards, including the logic for character prompts and Vibe sliders.
 
 ## 🤝 Contributing
 
